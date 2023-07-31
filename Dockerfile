@@ -16,7 +16,7 @@ COPY diabetes_model.pkl .
 RUN apt-get update &&\
     apt-get install -y gcc &&\
     # Install pip dependencies
-    pip install --no-cache --dirr requirements.txt
+    pip install --no-cache-dir -r requirements.txt
 
 # Expose the port where the Flask app will run
 EXPOSE 5000
