@@ -1,0 +1,59 @@
+/* styles.css */
+
+/* Import Apple SF Serif font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Apple+SF+Serif&display=swap');
+
+body {
+    font-family: 'Apple SF Serif', serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items along the x-axis (horizontally) */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 15px 3px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    font-size: medium;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add media queries for responsiveness */
+@media screen and (max-width: 500px) {
+    form {
+        width: 100%;
+    }
+}
