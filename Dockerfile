@@ -13,15 +13,15 @@ COPY static static
 COPY diabetes_model.pkl .
 
 # Install dependencies
-RUN apt-get update \               # Update the package list
-    && apt-get install -y gcc \    # Install gcc compiler
-    && pip install --no-cache-dir -r requirements.txt  # Install Python dependencies
+RUN apt-get update &&\
+    apt-get install -y gcc &&\
+    pip install --no-cache-dir -r requirements.txt
 
 # Expose the port where the Flask app will run
 EXPOSE 5000
 
 # Set the environment variable for Flask to run in production mode
-ENV FLASK_ENV=production
+ENV FLASK_ENV production
 
 # Start the Flask app when the container starts
 CMD ["python", "app.py"]
