@@ -1,3 +1,4 @@
+
 # Use the official Python base image
 FROM python:3.9-slim
 
@@ -12,7 +13,9 @@ COPY static static
 COPY diabetes_model.pkl .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update \               # Update the package list
+    && apt-get install -y gcc \    # Install gcc compiler
+    && pip install --no-cache-dir -r requirements.txt  # Install Python dependencies
 
 # Expose the port where the Flask app will run
 EXPOSE 5000
